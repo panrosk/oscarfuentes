@@ -8,7 +8,7 @@ function Loader() {
   useLayoutEffect(() => {
 
     const texto = new SplitType('#header')
-z
+
     const subheader = new SplitType('#subheader')
     const tl = gsap.timeline()
     tl.to(texto.chars, {

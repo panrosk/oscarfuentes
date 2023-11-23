@@ -17,7 +17,7 @@ const Clippatheffect = () => {
             opacity: 1, // Fully visible
             'clip-path': 'polygon(50% 50%, 50% 50%, 50% 50%, 50% 50%)' // CSS clip-path shape
         }, { // Animation target state
-            stagger: 0.3,
+            stagger: 0.4,
             'clip-path': 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)', // Target shape of the clip-path
         }, 0)
         // .to(elements, { // Animation target state

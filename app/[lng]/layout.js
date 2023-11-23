@@ -2,6 +2,7 @@ import { dir} from 'i18next'
 import { languages } from '../i18n/settings'
 import "./globals.css"
 import localFont from 'next/font/local'
+// import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 
 
 const myFont = localFont({ src: [
@@ -29,6 +30,7 @@ export  default async function RootLayout({
 
 
   return (
+
     <html lang={lng} dir={dir(lng)}>
       <head />
       <body className={myFont.className}>
@@ -36,5 +38,7 @@ export  default async function RootLayout({
         {children}
       </body>
     </html>
+
+
   )
 }

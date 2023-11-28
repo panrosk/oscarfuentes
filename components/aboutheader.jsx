@@ -3,7 +3,7 @@ import { useTranslation } from '@lib/app/i18n/client'
 import { useIsomorphicLayoutEffect } from '@lib/utils/isomorphiceffect';
 import gsap from 'gsap'
 import SplitType from 'split-type'
-
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 
 const AboutHeader = (props) => {
@@ -11,6 +11,7 @@ const AboutHeader = (props) => {
     const refi = useRef(null)
 
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
     const texto = new SplitType("#texto",{lineClass:"overflow-hidden"})
 
     let ctx = gsap.context(() => {

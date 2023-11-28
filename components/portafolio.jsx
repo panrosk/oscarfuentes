@@ -2,6 +2,7 @@ import { useIsomorphicLayoutEffect } from '@lib/utils/isomorphiceffect'
 import gsap from 'gsap'
 import React, { useRef } from 'react'
 import portafolio from "@lib/configs/portafolio.json"
+import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 const Portafolio = () => {
   const containerref = useRef(null)
@@ -10,6 +11,7 @@ const Portafolio = () => {
   const projects = Object.keys(portafolio)
 
   useIsomorphicLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
     
     let speed = imagenref.current.getAttribute('data-speed')
     let ctx = gsap.context(() => {

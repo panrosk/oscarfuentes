@@ -1,60 +1,56 @@
 'use client'
 import Image from 'next/image'
-import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
-
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
 import Loader from '@lib/components/loader';
 import HomeContent from '@lib/components/home';
 import { useState ,useLayoutEffect,useRef} from 'react';
-
-import gsap from 'gsap';
+import AboutHeader from '@lib/components/aboutheader';
+import gsap from 'gsap'
+import ScrollTrigger from "gsap/dist/ScrollTrigger";
+import Lenis from '@studio-freight/lenis'
+import Navigation from '@lib/components/navigation';
+import CustomMouse from '@lib/components/custom-mouse';
+import Portafolio from '@lib/components/portafolio';
 
 export default  function Home({ params: { lng } }) {
-  const containerRef = useRef(null)
+  const [loading, setLoading] = useState(false)
 
-  
-  const [loading, setLoading] = useState(true)
   useLayoutEffect(() => {
-    const tl = gsap.timeline()
-    tl.to("#loadingscreen", {
-      delay: 3,
-      duration: 1,
-      opacity: 0,
-      onComplete: () => {
-        setLoading(false)
-      }
+    gsap.registerPlugin(ScrollTrigger)
+
+    const lenis = new Lenis()
+
+    lenis.on('scroll', ScrollTrigger.update)
+
+    gsap.ticker.add((time)=>{
+      lenis.raf(time * 1000)
     })
+
+    gsap.ticker.lagSmoothing(0)
+
+
+    
+
+
   }, [])
 
 
   return (
-    <>
-  <LocomotiveScrollProvider
-  options={
-    {
-      smooth: true,
-      // ... all available Locomotive Scroll instance options 
-    }
-  }
-  watch={
-    [
-      //..all the dependencies you want to watch to update the scroll.
-      //  Basicaly, you would want to watch page/location changes
-      //  For exemple, on Next.js you would want to watch properties like `router.asPath` (you may want to add more criterias if the instance should be update on locations with query parameters)
-    ]
-  }
-  containerRef={containerRef}
-  >
-    {loading ? <div id="loadingscreen">
-      <Loader />
-    </div>  :
-    
-      
-     <HomeContent lng={lng}/>}
+
+  <main className='bg-black' >
+    <CustomMouse>
+    <Navigation lng={lng} />
+    <HomeContent lng={lng} />
+    <AboutHeader lng={lng} />
+    <Portafolio lng={lng} />
+    <div className='w-screen h-screen bg-black'>
+      gola
+    </div>
+    </CustomMouse>
+
+  </main>
 
 
 
-  </LocomotiveScrollProvider>
-
-  </>
   )
 }

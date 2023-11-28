@@ -1,0 +1,22 @@
+{
+    "JCB":{
+        "name":"JCB",
+        "website":"https://www.juntacomunalbetania.com/",
+        "imagen":"https://www.juntacomunalbetania.com/logo.webp"
+    },
+    "Saez":{
+        "name":"Saez, Fuentes y Asociados",
+        "website":"https://saezfuentesyasociados.com/",
+        "imagen":"https://saezfuentesyasociados.nyc3.cdn.digitaloceanspaces.com/favicon.png"
+    },
+    "Grand Central Concepts":{
+        "name":"Grand Central Concepts",
+        "website":"https://www.grandcentralpty.com/",
+        "imagen":"https://saezfuentesyasociados.nyc3.cdn.digitaloceanspaces.com/favicon.png"
+    },
+    "Medellin":{
+        "name":"Medellin BarberShop",
+        "website":"https://bmedellin.vercel.app/",
+        "imagen":"https://saezfuentesyasociados.nyc3.cdn.digitaloceanspaces.com/favicon.png"
+    }
+}

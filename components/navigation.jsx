@@ -1,10 +1,39 @@
 import { useTranslation } from '@lib/app/i18n/client'
-import React from 'react'
+import React, { useState } from 'react'
 import nav from "@lib/configs/navigation.json"
+import gsap from 'gsap'
+import { useIsomorphicLayoutEffect } from '@lib/utils/isomorphiceffect'
+
 
 const Navigation = (props) => {
   const {t} = useTranslation(props.lng,"navigation")
   const navigation = Object.keys(nav)
+
+  useIsomorphicLayoutEffect(() => {
+    let ctx = gsap.context(() => {
+      const links = gsap.utils.toArray('a');
+      links.forEach((link) => {
+        link.addEventListener('mouseenter', () => {
+          const element=link.querySelector('#under')
+          let tl= gsap.timeline({paused:true})
+          tl.fromTo(element, {width: "0%"}, {width: "100%", duration: 0.5, ease: "power3.inOut"})
+          tl.play()
+          
+        });
+        link.addEventListener('mouseleave', () => {
+          const element=link.querySelector('#under')
+          let tl= gsap.timeline({paused:true})
+          tl.fromTo(element,  {width: "100%", duration: 0.5, ease: "power3.inOut"},{width: "0%"})
+          tl.play()
+        });
+      });
+    }, null);
+    return () => ctx.revert();
+  }, [])
+
+
+
+  
 
 
   return (
@@ -12,7 +41,10 @@ const Navigation = (props) => {
       <div className='text-white z-50  lg:px-[40px] lg:py-[10px] hidden lg:flex gap-x-10'>
         {navigation.map((item, index) => {
           return(
-            <a className='hover:text-gray-300 text-white font-light' key={index} href={nav[item]}>{t(item)}</a>
+            <a   className=' relative text-white font-light' key={index} href={nav[item]}>
+            <span>{t(item)}</span>
+            <span id="under" className='block absolute bottom-0 bg-white left-0  h-[1px] z-[100]'></span>
+            </a>
           )
         })}
       </div>

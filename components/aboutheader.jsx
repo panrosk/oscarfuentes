@@ -15,8 +15,6 @@ const AboutHeader = (props) => {
     const texto = new SplitType("#texto",{lineClass:"overflow-hidden"})
 
     let ctx = gsap.context(() => {
-
-
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: refi.current,
@@ -26,6 +24,7 @@ const AboutHeader = (props) => {
           scrub: true,
           toggleActions: 'play none none reverse',
         },
+        paused: true,
       });
       tl.fromTo(texto.words,{opacity:0, y:100},  {
         duration: 1,
@@ -35,7 +34,6 @@ const AboutHeader = (props) => {
 
 
       })
-      tl.play()
     }, refi);
 
     return () => ctx.revert();
@@ -45,7 +43,7 @@ const AboutHeader = (props) => {
   return (
     <div className='bg-black !w-full overflow-hidden'>
     <section ref={refi}  className='h-screen flex justify-center !w-full bg-black '>
-        <div   className='overflow-hidden !w-full bg-black lg:p-[40px]  '>
+        <div   className='overflow-hidden flex justify-center !w-full bg-black lg:p-[40px]  '>
         <p id="texto"  style={{fontKerning:"none"}}  className='text-white font-header  !w-full  text-[24px] lg:text-[32px] w-full! subheader '>{t("about")}</p>
         </div>
     </section>

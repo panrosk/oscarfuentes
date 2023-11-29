@@ -39,7 +39,7 @@ const CustomMouse = (props) => {
 
   return (
     <div
-      className='w-screen h-screen bg-black'
+      className='!w-screen !h-full bg-black overflow-hidden'
       onMouseMove={handleMouseMove}
     
     >

@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import React, { useRef } from 'react';
 import portafolio from "@lib/configs/portafolio.json";
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import useCursorEvents from '@lib/utils/cursorstore';
 
 
 const Portafolio = () => {
@@ -16,7 +15,6 @@ const Portafolio = () => {
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     
-    let speed = imagenref.current.getAttribute('data-speed')
     let ctx = gsap.context(() => {
 
         const tl = gsap.timeline(
@@ -41,10 +39,10 @@ const Portafolio = () => {
   }, [])  
   return (
 
-    <section id={portafolio} ref={containerref} className='relative bg-black h-full lg:p-[40px] w-full' >
+    <section id={portafolio} ref={containerref} className='relative bg-black !h-full min-h-screen lg:p-[40px] w-full' >
             <div className='absolute flex items-center lg:items-start justify-end  '>
             
-            <img ref={imagenref}  src="https://images.unsplash.com/photo-1648495754619-885ca69c1665?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-5/6 lg:w-1/2 h-[600px] lg:h-[1500px]' alt="" />
+            <img ref={imagenref}  src="https://images.unsplash.com/photo-1648495754619-885ca69c1665?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-5/6 lg:w-1/2 h-[600px] lg:h-[1000px]' alt="" />
             <div className=' absolute h-full w-full bg-black opacity-20'></div>
         </div>
         <div className=' absolute flex items-center h-full   w-full '>

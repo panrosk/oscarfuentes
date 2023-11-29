@@ -2,5 +2,7 @@
   "header": "Oscar Fuentes",
   "subheader": "Creativo",
   "about":"¡Que xopa! Soy Oscar Fuentes y este es mi espacio digital.Aquí muestro mi trabajo como freelance designer and developer y también mi parte creativa como escritor de opinion y poeta donde publico bajo el seudónimo de Blanche Descartes. ",
-  "projectsdescription":"I’m passionated about development an i’ve used different tools to develop websites like NextJs, SveteKit, Firebase, NodeJs, Python (Mostly with Fast API) and many others. These days i mostly use SvelteKit for front-end development and Strapi as a CMS. If backend development is needed i deploy serverless fuctions on Firebase or AWS. "
+  "projectsdescription":"I’m passionated about development an i’ve used different tools to develop websites like NextJs, SveteKit, Firebase, NodeJs, Python (Mostly with Fast API) and many others. These days i mostly use SvelteKit for front-end development and Strapi as a CMS. If backend development is needed i deploy serverless fuctions on Firebase or AWS. ",
+  "whatsapp":"Whatsapp",
+  "email":"Email"
 }

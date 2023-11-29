@@ -12,6 +12,7 @@ import Navigation from '@lib/components/navigation';
 import CustomMouse from '@lib/components/custom-mouse';
 import Portafolio from '@lib/components/portafolio';
 import ProjectDescription from "@lib/components/projectsdescription"
+import Contact from '@lib/components/contact';
 
 export default  function Home({ params: { lng } }) {
   const [loading, setLoading] = useState(false)
@@ -44,8 +45,8 @@ export default  function Home({ params: { lng } }) {
     <HomeContent lng={lng} />
     <AboutHeader lng={lng} />
     <Portafolio lng={lng} />
-    <ProjectDescription lng={lng}/>
-    
+    {/* <ProjectDescription lng={lng}/> */}
+    <Contact lng={lng} />
     </CustomMouse>
 
   </main>

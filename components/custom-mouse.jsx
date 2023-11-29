@@ -11,21 +11,31 @@ import useCursorEvents from '@lib/utils/cursorstore';
 const CustomMouse = (props) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  let xTo = gsap.quickTo(".ball", "x", {duration: 0.6, ease: "power3"}),
-    yTo = gsap.quickTo(".ball", "y", {duration: 0.6, ease: "power3"});
 
 
   const cursorsize = 15;
+  let handleMouseMove;
 
-  const handleMouseMove = (e) => {
+  handleMouseMove = (e) => {
     const { clientX, clientY } = e;
-    setMousePosition({ x:xTo(clientX - cursorsize / 2), y: yTo(clientY - cursorsize / 2) });
+    setMousePosition({ x:clientX - cursorsize / 2, y: clientY - cursorsize / 2 });
   };
+
+
+
 
   const {active, update} = useCursorEvents()
 
 
   useIsomorphicLayoutEffect(() => {
+    let xTo = gsap.quickTo(".ball", "x", {duration: 0.6, ease: "power3"}),
+    yTo = gsap.quickTo(".ball", "y", {duration: 0.6, ease: "power3"});
+
+    handleMouseMove = (e) => {
+      const { clientX, clientY } = e;
+      setMousePosition({ x:xTo(clientX - cursorsize / 2), y: yTo(clientY - cursorsize / 2) });
+    };
+
     if(active){
       gsap.to(".ball", {duration: 0.6, width:"80px",height:"80px", ease: "power3"})
       gsap.to("#inside", {duration: 0.6, opacity:1, ease: "power3"})
@@ -35,7 +45,7 @@ const CustomMouse = (props) => {
     }
     
     
-  },[active])
+  },[mousePosition])
 
   return (
     <div

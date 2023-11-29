@@ -1,5 +1,6 @@
 {
   "header": "Oscar Fuentes",
   "subheader": "Creator of Things*",
-  "about":"Hello, Im a Oscar Fuentes a selftaught developer and designer. I love to create things that people can use and enjoy. I have a passion for learning and sharing my knowledge with others as publicly as possible. I also write about things that i find interesting and i publish poetry under the pseudonym of 'Blanche Descartes'."
+  "about":"Hello, Im a Oscar Fuentes a selftaught developer and designer. I love to create things that people can use and enjoy. I have a passion for learning and sharing my knowledge with others as publicly as possible. I also write about things that i find interesting and i publish poetry under the pseudonym of 'Blanche Descartes'.",
+  "projectsdescription":"I am a dedicated and enthusiastic developer with a wealth of experience in crafting dynamic and responsive websites. My journey in web development has led me to explore a diverse array of tools, including Next.js, SvelteKit, Firebase, Node.js, and Python (with a focus on FastAPI). Currently, my passion lies in leveraging SvelteKit for front-end development, seamlessly integrated with Strapi as a robust CMS. When it comes to backend development, I specialize in deploying serverless functions on platforms like Firebase and AWS. This approach ensures scalability and efficiency, allowing me to create streamlined and high-performing web applications. My commitment to staying at the forefront of innovative technologies enables me to deliver cutting-edge solutions for a seamless user experience."
 }

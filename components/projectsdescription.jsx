@@ -6,13 +6,13 @@ import SplitType from 'split-type'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 
 
-const AboutHeader = (props) => {
+const ProjectDescription = (props) => {
     const {t} = useTranslation(props.lng)
     const refi = useRef(null)
 
   useIsomorphicLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-    const texto = new SplitType("#texto",{lineClass:"overflow-hidden"})
+    const texto = new SplitType("#textoproject",{lineClass:"overflow-hidden"})
 
     let ctx = gsap.context(() => {
       const tl = gsap.timeline({
@@ -42,9 +42,10 @@ const AboutHeader = (props) => {
     
   return (
     <div className='bg-black !w-full overflow-hidden'>
-    <section id="about" ref={refi}  className='h-screen flex justify-center !w-full bg-black '>
+    <section ref={refi}  className='h-screen flex justify-center !w-full bg-black '>
+
         <div   className='overflow-hidden flex justify-center !w-full bg-black lg:p-[40px]  '>
-        <p id="texto"  style={{fontKerning:"none"}}  className='text-white font-header  !w-full  text-[24px] lg:text-[32px] w-full! subheader '>{t("about")}</p>
+        <p id="textoproject"  style={{fontKerning:"none"}}  className='text-white font-header  !w-full  text-[24px] lg:text-[32px] w-full! subheader '>{t("projectsdescription")}</p>
         </div>
     </section>
     </div>
@@ -52,4 +53,4 @@ const AboutHeader = (props) => {
   )
 }
 
-export default AboutHeader
+export default ProjectDescription 
